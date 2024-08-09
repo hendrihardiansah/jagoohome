@@ -18,6 +18,14 @@ model User {
     @@map("user")
 }
 
+model Password {
+    username    Int     @default(autoincrement()) @username
+    password    String?
+    user        User[]
+
+    @@map("password")    
+}
+
 model Paket {
     id          Int @default(autoincrement()) @id
     nama_paket  String?
